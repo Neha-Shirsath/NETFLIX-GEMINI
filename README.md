@@ -17,6 +17,11 @@
     - Movie Suggestions
       - Movie List
 
-- NetflicGPt
+- NetfliXGPT
   - SearchBar
   - Movie Suggestions
+
+## Modules
+- Header
+- Login Form
+- Sign Up, Sign In Form
