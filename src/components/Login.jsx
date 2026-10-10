@@ -20,7 +20,17 @@ const Login = () => {
     //validate form data
     const msg = checkValidData(email.current.value, password.current.value, name.current?.value, isSignInForm)
     setErrorMessage(msg);
-  }
+    if(msg) return;
+    
+    // signup/signin logic
+    if(!isSignInForm){
+      //signUp logic
+    }
+    else{
+      //signIn logic
+    }
+
+  };
 
     return (
     <div>

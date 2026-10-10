@@ -28,3 +28,6 @@
 - Sign Up, Sign In Form
 - Form validation
 - useRef Hook
+- Firebase setup
+- Deployed to Production
+- Create User Account
