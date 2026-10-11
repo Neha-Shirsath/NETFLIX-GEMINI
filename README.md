@@ -31,3 +31,5 @@
 - Firebase setup
 - Deployed to Production
 - Create User Account
+- implement sign in User
+- creted redux store with user slice
