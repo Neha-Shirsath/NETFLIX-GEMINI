@@ -33,3 +33,6 @@
 - Create User Account
 - implement sign in User
 - creted redux store with user slice
+- implemented sign out
+- update profile
+- fetch from pmdb movies
