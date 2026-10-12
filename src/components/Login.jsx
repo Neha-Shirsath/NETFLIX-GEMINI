@@ -3,15 +3,13 @@ import Header from "./Header";
 import { checkValidData } from "../utils/Validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/UserSlice";
+import { MOVIES_BG, USER_LOGO } from "../utils/constants";
 
 const Login = () => {
 
   const [isSignInForm, setIsSignInForm] = useState(true)
-
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -40,15 +38,14 @@ const Login = () => {
       // Signed up 
       const user = userCredential.user;
         updateProfile(auth.currentUser, {
-          displayName: name.current.value, photoURL: "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg"
+          displayName: name.current.value, photoURL: USER_LOGO 
           })
             .then(() => {
               const {uid, email, displayName, photoURL} = auth.currentUser;
               dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-              navigate("/browse");
             })
             .catch((error) => {
-              setErrorMessage(error.msg)
+              setErrorMessage(error.message)
             });
       })
       .catch((error) => {
@@ -59,15 +56,13 @@ const Login = () => {
     }
 
     else{
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value, isSignInForm)
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
 
       const { uid, email, displayName, photoURL } = user;
       dispatch(addUser({uid: uid,email: email,displayName: displayName,photoURL: photoURL}));
-
-      navigate("/browse");
       })
       .catch((error) => {
       const errorCode = error.code;
@@ -84,7 +79,7 @@ const Login = () => {
         <Header />
         <div className="absolute">
           <img 
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/f0b42cac-9ced-425f-8677-777eadbdbe2f/web/IN-en-20261005-TRIFECTA-perspective_14c6dcd8-c058-4841-a0e5-1d0d70b35836_large.jpg"
+          src={MOVIES_BG}
           alt="movies-bg" />
         </div>
 
