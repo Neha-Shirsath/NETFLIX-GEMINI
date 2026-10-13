@@ -37,12 +37,8 @@ const Header = () => {
       }, [])
   
 
-  // const onClickExpandBtn = () => {
-  //   //expand btn logic
-  // }
-
   const handleGeminiSearchClick = () => {
-    dispatch(toggleGeminiSearchView)
+    dispatch(toggleGeminiSearchView())
   }
 
 
@@ -72,12 +68,10 @@ const Header = () => {
           alt="user-logo" />
           <h3 className="p-1 mr-1 font-bold text-white">{user?.displayName}</h3>
 
-          {/* <p onClick={onClickExpandBtn}
-          className="text-white my-4">▼</p> */}
-
+        
           <button 
           onClick={handleSignOutBtn}
-          className="bg-red-600 font-bold text-sm text-white h-6 mt-1.5 pb-2 px-2 rounded-lg hover:opacity-80">
+          className="bg-red-600 font-bold text-sm text-white h-6 mt-1.5 pb-2 px-2 rounded-md hover:opacity-80">
             Sign Out
           </button>
         </div>
