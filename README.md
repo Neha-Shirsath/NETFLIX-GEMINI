@@ -49,3 +49,7 @@
 - fetch data for trailer video
 - updated store with trailer video data
 - embedded yt video and made autoplay and mute
+- secondary conatiner
+- movieCards list for now playing movies
+- scroll movies
+- created hook for popular movies

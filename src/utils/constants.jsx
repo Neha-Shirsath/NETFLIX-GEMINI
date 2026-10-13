@@ -11,3 +11,5 @@ export const API_OPTIONS = {
   headers: {accept: 'application/json',
   Authorization: `Bearer ${MOVIE_TOKEN}`}
 };
+
+export const IMG_CDN_URL = " https://image.tmdb.org/t/p/w400/"
