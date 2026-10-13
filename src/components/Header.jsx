@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { NETFLIX_LOGO, USER_LOGO } from "../utils/constants";
+import { toggleGeminiSearchView } from "../utils/GeminiSlice";
 
 const Header = () => {
   
@@ -40,6 +41,11 @@ const Header = () => {
   //   //expand btn logic
   // }
 
+  const handleGeminiSearchClick = () => {
+
+  }
+
+
   return (
     <div className="absolute w-screen px-8 py-3 bg-gradient-to-b from-black z-10 flex justify-between items-center">
         <img 
@@ -48,18 +54,26 @@ const Header = () => {
         alt="netflix-logo" />
         
         {user && (
-          <div className="flex">
-          <img className="w-10 h-10 my-2 p-1"
+          <div className="flex bg-gradient-to-tr bg-black py-1">
+            <button 
+              onClick={handleGeminiSearchClick}
+              className="bg-gradient-to-r from-pink-700 to-purple-800 text-white font-bold rounded-lg px-2 mr-2 text-sm hover:opacity-80">
+              Gemini Search
+            </button>
+
+          <img className="w-9 h-9 p-1"
           src={user?.photoURL || USER_LOGO }
           alt="user-logo" />
-          <h3 className="p-1 mr-2 my-3 font-bold text-white">{user?.displayName}</h3>
+          <h3 className="p-1 mr-1 font-bold text-white">{user?.displayName}</h3>
 
           {/* <p onClick={onClickExpandBtn}
           className="text-white my-4">▼</p> */}
 
           <button 
           onClick={handleSignOutBtn}
-          className="bg-red-600 font-bold text-sm text-white h-6 mt-4 items-center pb-2 px-1 rounded-lg">Sign Out</button>
+          className="bg-red-600 font-bold text-sm text-white h-6 mt-1.5 pb-2 px-1 rounded-lg hover:opacity-80">
+            Sign Out
+          </button>
         </div>
         )}
         

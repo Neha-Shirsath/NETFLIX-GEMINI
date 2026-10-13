@@ -53,3 +53,8 @@
 - movieCards list for now playing movies
 - scroll movies
 - created hook for popular movies
+- created custom hook for TopRatedMovies
+- added movie list of top rated movies to main container
+- created custom hook for UpcomingMovies
+- added movie list of upcoming movies to main container
+- Search feature
