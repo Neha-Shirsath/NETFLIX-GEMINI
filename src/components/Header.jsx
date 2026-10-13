@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { onAuthStateChanged } from "firebase/auth";
-import { NETFLIX_LOGO, USER_LOGO } from "../utils/constants";
+import { NETFLIX_LOGO, SUPPORTED_LANG, USER_LOGO } from "../utils/constants";
 import { toggleGeminiSearchView } from "../utils/GeminiSlice";
 
 const Header = () => {
@@ -42,7 +42,7 @@ const Header = () => {
   // }
 
   const handleGeminiSearchClick = () => {
-
+    dispatch(toggleGeminiSearchView)
   }
 
 
@@ -54,11 +54,17 @@ const Header = () => {
         alt="netflix-logo" />
         
         {user && (
-          <div className="flex bg-gradient-to-tr bg-black py-1">
+          <div className="flex py-1">
+
+            <select className="p-1 px-2 bg-zinc-800 mx-2 text-white text-md">
+              {SUPPORTED_LANG.map((lang) => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+            </select>
+            
+
             <button 
               onClick={handleGeminiSearchClick}
               className="bg-gradient-to-r from-pink-700 to-purple-800 text-white font-bold rounded-lg px-2 mr-2 text-sm hover:opacity-80">
-              Gemini Search
+              Gemini Search ✧
             </button>
 
           <img className="w-9 h-9 p-1"
@@ -71,7 +77,7 @@ const Header = () => {
 
           <button 
           onClick={handleSignOutBtn}
-          className="bg-red-600 font-bold text-sm text-white h-6 mt-1.5 pb-2 px-1 rounded-lg hover:opacity-80">
+          className="bg-red-600 font-bold text-sm text-white h-6 mt-1.5 pb-2 px-2 rounded-lg hover:opacity-80">
             Sign Out
           </button>
         </div>

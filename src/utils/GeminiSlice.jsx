@@ -12,6 +12,6 @@ const GeminiSlice = createSlice({
     },
 })
 
-export const {toggleGeminiSearchView} = GeminiSlice.actions;
+export const { toggleGeminiSearchView } = GeminiSlice.actions;
 
 export default GeminiSlice.reducer;

@@ -12,4 +12,9 @@ export const API_OPTIONS = {
   Authorization: `Bearer ${MOVIE_TOKEN}`}
 };
 
-export const IMG_CDN_URL = " https://image.tmdb.org/t/p/w400/"
+export const IMG_CDN_URL = " https://image.tmdb.org/t/p/w400/";
+
+export const SUPPORTED_LANG = [{identifier: "en", name:"English"}, 
+                              {identifier: "hindi", name:"Hindi"}, 
+                              {identifier: "spanish", name:"Spanish"}, 
+                              {identifier: "japanese", name:"Japanese"}]

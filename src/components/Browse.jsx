@@ -6,9 +6,11 @@ import usePopularMovies from "../customHooks/usePopularMovies";
 import useTopRatedMovies from "../customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/useUpcomingMovies";
 import GeminiSearch from "./GeminiSearch";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
 
+  const showGeminiSearch = useSelector((store) => store.gemini.showGeminiSearch)
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
@@ -17,9 +19,13 @@ const Browse = () => {
   return (
     <div>
         <Header />
-        <GeminiSearch />
-        <MainContainer />
-        <SecondaryContainer />
+        {
+          showGeminiSearch ? (<GeminiSearch />) : (
+          <>
+          <MainContainer />
+          <SecondaryContainer /></>
+          ) 
+        }
         {/* {
         main container
          -videoBG
