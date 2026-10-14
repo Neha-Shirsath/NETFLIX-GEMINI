@@ -1,4 +1,5 @@
 import { MOVIE_TOKEN } from "./movieToken";
+import { GEMINI_API } from "./movieToken";
 
 export const NETFLIX_LOGO = "https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAQ4TXm1OaapkwYRGseWYrT2HFpAFV7IX9bgV76BxLOD_049HTkgqZ6zq3enQ0gxU1b-868yGZj1I99Ak9oRykNILYsbpT_0d-be9QKbwkD8OfaEdWL-FHZBiORJ9ppzVCM1-mVn63afS.svg";
 
@@ -18,3 +19,5 @@ export const SUPPORTED_LANG = [{identifier: "en", name:"English"},
                               {identifier: "hindi", name:"Hindi"}, 
                               {identifier: "spanish", name:"Spanish"}, 
                               {identifier: "japanese", name:"Japanese"}]
+
+export const GEMINI_KEY = GEMINI_API;
