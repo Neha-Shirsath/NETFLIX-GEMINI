@@ -58,3 +58,4 @@
 - created custom hook for UpcomingMovies
 - added movie list of upcoming movies to main container
 - Search feature
+- multi-language feature

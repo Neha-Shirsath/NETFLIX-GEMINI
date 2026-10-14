@@ -7,12 +7,15 @@ import { addUser, removeUser } from "../utils/UserSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { NETFLIX_LOGO, SUPPORTED_LANG, USER_LOGO } from "../utils/constants";
 import { toggleGeminiSearchView } from "../utils/GeminiSlice";
+import { changeLanguage } from "../utils/ConfigSlice";
 
 const Header = () => {
   
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const showGeminiSearch = useSelector((store) => store.gemini.showGeminiSearch)
 
   const handleSignOutBtn = () =>{
     signOut(auth).then(() => {}).catch((error) => {
@@ -41,6 +44,9 @@ const Header = () => {
     dispatch(toggleGeminiSearchView())
   }
 
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value))
+  }
 
   return (
     <div className="absolute w-screen px-8 py-3 bg-gradient-to-b from-black z-10 flex justify-between items-center">
@@ -52,15 +58,19 @@ const Header = () => {
         {user && (
           <div className="flex py-1">
 
-            <select className="p-1 px-2 bg-zinc-800 mx-2 text-white text-md">
+          {showGeminiSearch && (
+            <select 
+              onClick={handleLanguageChange}
+              className="p-1 px-2 bg-zinc-800 mx-2 text-white text-md">
               {SUPPORTED_LANG.map((lang) => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
             </select>
-            
+          )}
+                      
 
             <button 
               onClick={handleGeminiSearchClick}
               className="bg-gradient-to-r from-pink-700 to-purple-800 text-white font-bold rounded-lg px-2 mr-2 text-sm hover:opacity-80">
-              Gemini Search ✧
+              { showGeminiSearch ? "Home" : "Gemini Search ✧"}
             </button>
 
           <img className="w-9 h-9 p-1"
