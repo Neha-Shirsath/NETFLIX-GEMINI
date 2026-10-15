@@ -1,14 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/LanguageConstants";
 import { useRef } from "react";
 import gemini from "../utils/Gemini";
 import { API_OPTIONS } from "../utils/constants";
+import { addGeminiMoviesResult } from "../utils/GeminiSlice";
 
 const GeminiSearchBar = () => {
 
     const langKey = useSelector((store) => store.config.lang)
 
     const searchText = useRef(null);
+
+    const dispatch = useDispatch();
 
     //search movie in tmdb db
     const searchMovie = async(movie) => {
@@ -45,6 +48,7 @@ const GeminiSearchBar = () => {
         const tmdbResults = await Promise.all(promiseArray);
 
         console.log(tmdbResults);
+        dispatch(addGeminiMoviesResult({movieNames: geminiMovies, movieResults: tmdbResults}));
 
         };
 

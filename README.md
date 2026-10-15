@@ -59,3 +59,5 @@
 - added movie list of upcoming movies to main container
 - Search feature
 - multi-language feature
+- displayed search movie results
+- MovieList reused for gemini movie results
