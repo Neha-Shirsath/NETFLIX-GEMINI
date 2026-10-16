@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "netflixgpt-be9f7"
-  }
+  },
+  "targets": {
+    "netflixgpt-be9f7": {
+      "hosting": {
+        "netflixgpt": [
+          "netflix-gemini-byneha"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
