@@ -61,3 +61,6 @@
 - multi-language feature
 - displayed search movie results
 - MovieList reused for gemini movie results
+- memoization => set limit on api calls
+- secured keys using env file
+- made app responsive 

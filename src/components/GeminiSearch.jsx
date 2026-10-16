@@ -5,13 +5,17 @@ import { MOVIES_BG } from "../utils/constants";
 const GeminiSearch = () => {
     return (
         <div>
-            <div className="fixed -z-10">
+
+            <div className="fixed md:fixed -z-10">
                       <img 
+                      className="h-screen object-cover md:w-screen"
                       src={MOVIES_BG}
                       alt="movies-bg" />
                     </div>
-            <GeminiSearchBar />
-            <GeminiMovieSuggestions />
+            <div className="">
+                <GeminiSearchBar />
+                <GeminiMovieSuggestions />
+            </div>
         </div>
     )
 }

@@ -54,8 +54,8 @@ const GeminiSearchBar = () => {
 
 
     return (
-        <div className="pt-[10%] flex justify-center">
-            <form className="w-1/2 bg-black grid grid-cols-12 rounded-md" onSubmit={(e) => e.preventDefault()}>
+        <div className="pt-[40%] md:pt-[10%] flex justify-center">
+            <form className="w-full md:w-1/2 m-4 md:m-0 bg-black grid grid-cols-12 rounded-md" onSubmit={(e) => e.preventDefault()}>
                 <input ref={searchText}
                 className="p-2 m-3 col-span-9" type="text" 
                 placeholder={lang[langKey].geminiSearchPlaceholder}/>

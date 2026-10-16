@@ -49,9 +49,9 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute w-screen px-8 py-3 bg-gradient-to-b from-black z-10 flex justify-between items-center">
+    <div className="absolute w-screen px-8 py-3 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between items-center">
         <img 
-        className="w-40"
+        className="w-20 md:w-40 md:mx-0 mx-auto"
         src={ NETFLIX_LOGO } 
         alt="netflix-logo" />
         
@@ -69,7 +69,7 @@ const Header = () => {
 
             <button 
               onClick={handleGeminiSearchClick}
-              className="bg-gradient-to-r from-pink-700 to-purple-800 text-white font-bold rounded-lg px-2 mr-2 text-sm hover:opacity-80">
+              className="bg-gradient-to-r from-pink-700 to-purple-800 text-white font-bold rounded-lg px-1 md:px-2 mr-2 text-xs md:text-sm hover:opacity-80">
               { showGeminiSearch ? "Home" : "Gemini Search ✧"}
             </button>
 
@@ -81,7 +81,7 @@ const Header = () => {
         
           <button 
           onClick={handleSignOutBtn}
-          className="bg-red-600 font-bold text-sm text-white h-6 mt-1.5 pb-2 px-2 rounded-md hover:opacity-80">
+          className="bg-red-600 font-bold text-xs md:text-sm text-white h-6 mt-1.5  md:pb-2 px-1 md:px-2 rounded-md hover:opacity-80">
             Sign Out
           </button>
         </div>
