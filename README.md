@@ -1,4 +1,26 @@
-# NetflixGPT
+# NetflixGPT🎬 
+A Netflix-inspired movie streaming UI built with React, Redux Toolkit, Tailwind CSS, and Firebase, featuring AI-powered movie search using Gemini.
+
+🌐 Visit NetflixGPT Live
+
+
+ ## Features
+🔐 User authentication with Firebase
+🎥 Browse movies and watch trailers
+🤖 AI-powered movie recommendations using Gemini API
+🔍 Search movies using natural language
+🎨 Responsive Netflix-inspired UI
+⚡ State management with Redux Toolkit
+
+
+## Tech Stack
+React.js
+Redux Toolkit
+Tailwind CSS
+Firebase Authentication & Hosting
+Gemini API
+TMDB API
+
 
 ## Setup
 - create React app
