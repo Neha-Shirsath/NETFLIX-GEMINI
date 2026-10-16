@@ -1,7 +1,7 @@
 # NetflixGemini🎬 
 A Netflix-inspired movie streaming UI built with React, Redux Toolkit, Tailwind CSS, and Firebase, featuring AI-powered movie search using Gemini.
 
-🌐 Visit NetflixGPT Live
+🌐 Visit NetflixGEMINI Live
 
 
  ## Features
